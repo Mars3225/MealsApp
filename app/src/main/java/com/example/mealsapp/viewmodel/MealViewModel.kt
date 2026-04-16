@@ -7,19 +7,22 @@ import com.example.mealsapp.repository.MealRepository
 import kotlinx.coroutines.launch
 
 class MealViewModel(private val repo: MealRepository) : ViewModel() {
-
     val meals = MutableLiveData<List<Meal>>()
     val error = MutableLiveData<String>()
+    val isLoading = MutableLiveData<Boolean>()
 
-     fun loadMeals() {
+    fun loadMeals() {
         viewModelScope.launch {
+            isLoading.value = true
+
             try {
-                val result = repo.getMeals()
-                println("ANIME: $result") // 👈 ВАЖНО
-                meals.value = result
+                meals.value = repo.getMeals()
+                println("ANIME" + "${meals.value}")
             } catch (e: Exception) {
                 error.value = "Ошибка загрузки"
             }
+
+            isLoading.value = false
         }
     }
 }

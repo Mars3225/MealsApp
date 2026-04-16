@@ -9,12 +9,11 @@ import com.example.mealsapp.db.AppDatabase
 import com.example.mealsapp.repository.MealRepository
 
 class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val db = AppDatabase.getDb(requireContext())
         val repo = MealRepository(db.dao())
-
         val recycler = view.findViewById<RecyclerView>(R.id.recycler)
+        recycler.layoutManager = LinearLayoutManager(requireContext())
 
         repo.getFavorites().observe(viewLifecycleOwner) {
             recycler.adapter = FavoriteAdapter(it)

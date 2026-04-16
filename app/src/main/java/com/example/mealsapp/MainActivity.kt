@@ -13,7 +13,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
                 else -> "Favorites"
             }
         }.attach()
-
     }
 
     class ViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {

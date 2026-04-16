@@ -12,15 +12,12 @@ import com.example.mealsapp.repository.MealRepository
 import kotlinx.coroutines.launch
 
 class DetailActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val b = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(b.root)
-
         val meal = intent.getSerializableExtra("meal") as Meal
-
         val repo = MealRepository(AppDatabase.getDb(this).dao())
 
         b.title.text = meal.strMeal

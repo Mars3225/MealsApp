@@ -9,7 +9,6 @@ import com.example.mealsapp.databinding.ItemMealBinding
 import com.example.mealsapp.model.Meal
 
 class MealAdapter(private val onClick: (Meal) -> Unit) : RecyclerView.Adapter<MealAdapter.VH>() {
-
     private var list = listOf<Meal>()
 
     @SuppressLint("NotifyDataSetChanged")
@@ -28,7 +27,6 @@ class MealAdapter(private val onClick: (Meal) -> Unit) : RecyclerView.Adapter<Me
 
     override fun onCreateViewHolder(p: ViewGroup, v: Int) =
         VH(ItemMealBinding.inflate(LayoutInflater.from(p.context), p, false))
-
     override fun getItemCount() = list.size
     override fun onBindViewHolder(h: VH, i: Int) = h.bind(list[i])
 }

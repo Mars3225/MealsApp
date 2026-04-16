@@ -5,7 +5,6 @@ import androidx.room.*
 
 @Dao
 interface FavoriteDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(meal: FavoriteEntity)
 
