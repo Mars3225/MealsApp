@@ -1,7 +1,6 @@
 package com.example.mealsapp.viewmodel
 
 import androidx.lifecycle.*
-import coil3.util.CoilUtils.result
 import com.example.mealsapp.model.Meal
 import com.example.mealsapp.repository.MealRepository
 import kotlinx.coroutines.launch
