@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MealsApp</string>
+    <string name="error_load_meals">Не удалось загрузить рецепты</string>
+    <string name="action_retry">Повторить</string>
 </resources>
